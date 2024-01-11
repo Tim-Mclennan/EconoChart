@@ -44,7 +44,7 @@ export const tokens = {
     },
   };
   
-  // mui theme settings
+  // mui theme settings we can use throughout the application with a themeprovider component:
   export const themeSettings = {
     palette: {
       primary: {
