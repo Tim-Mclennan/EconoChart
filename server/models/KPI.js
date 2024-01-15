@@ -1,5 +1,7 @@
+import { Map } from "@mui/icons-material";
 import express from "express";
-import { loadType } from "mongoose-currnecy";
+import mongoose from "mongoose";
+import { loadType } from "mongoose-currency";
 
 const Schema = mongoose.Schema;
 loadType(mongoose);
