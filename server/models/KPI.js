@@ -1,5 +1,3 @@
-import { Map } from "@mui/icons-material";
-import express from "express";
 import mongoose from "mongoose";
 import { loadType } from "mongoose-currency";
 
@@ -50,6 +48,19 @@ const monthSchema = new Schema(
     { toJson: { getters: true } }
 )
 
+// Define a schema for the category expense
+const CategoryExpenseSchema = new Schema({
+  category: String,
+  amount: {
+    type: Number,
+    get: v => (v / 100).toFixed(2) // Assuming you want to store currency in cents and convert to dollars
+  }
+});
+
+// Create a model for the category expense
+const CategoryExpense = mongoose.model('CategoryExpense', CategoryExpenseSchema);
+
+
 const KPISchema = new Schema(
     {
         totalProfit: {
@@ -67,18 +78,15 @@ const KPISchema = new Schema(
             currency: "AUD",
             get: (v) => v / 100
         },
-        expenseByCategory: {
-            type: Map,
-            of: {
-                type: mongoose.Types.Currency,
-                currency: "AUD",
-                get: (v) => v / 100
-            }
-        },
+        expenseByCategory: [{
+            type: Schema.Types.ObjectId,
+            ref: CategoryExpense
+          }],
         monthlyData: [monthSchema],
         dailyData: [daySchema],
 
-    }
+    },
+    { timestamps: true, toJSON: { getters: true }}
 );
 
 const KPI = mongoose.model("KPI", KPISchema)
