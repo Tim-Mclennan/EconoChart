@@ -16,7 +16,7 @@ const NavBar = (props: Props) => {
         <FlexBetween gap="0.75rem">
             <BlurOnIcon sx={{ fontSize: "28px" }} />
                 <Typography variant="h4" fontSize="16px">
-                    EconoPredict
+                    EconoChart
                 </Typography>
         </FlexBetween>
 

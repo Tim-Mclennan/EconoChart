@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 
 // ROUTES
-app.use("/kpi", kpiRoutes)
+app.use("/kpis", kpiRoutes)
 
 // MONGOOSE
 const PORT = process.env.PORT || 9000;
@@ -36,9 +36,10 @@ mongoose
     .then(async () => {
         app.listen(PORT, () => console.log(`server port: ${PORT}`));
 
-        await mongoose.connection.db.dropDatabase();
+        //dropping the current database before updating it to avoid duplicate data:
+        // await mongoose.connection.db.dropDatabase();
 
-        KPI.insertMany(kpis)
+        // KPI.insertMany(kpis)
     })
 
     .catch((error) => console.log(`${error} did not connect`))
