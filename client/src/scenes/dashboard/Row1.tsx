@@ -1,12 +1,27 @@
 import DashboardBox from '@/components/DashboardBox'
 import { useGetKpisQuery } from '@/state/api';
+import { useMemo } from 'react';
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 type Props = {}
 
-const Row1 = (props: Props) => {
+const Row1 = () => {
     const { data } = useGetKpisQuery();
 
     console.log("data: ", data);
+    
+    // useMemo is useful here for conserving memory
+    const revenueExpenses = useMemo(() => {
+        return (
+            data && data[0].monthlyData.map(({ month , revenue, expenses }) => {
+                return {
+                    name: month.substring(0, 3),
+                    revenue: revenue,
+                    expenses: expenses,
+                }
+            })
+        )
+    }, [data]);
 
     return (
         <>
@@ -15,7 +30,7 @@ const Row1 = (props: Props) => {
                     <AreaChart
                         width={500}
                         height={400}
-                        data={data}
+                        data={revenueExpenses}
                         margin={{
                             top: 10,
                             right: 30,
@@ -27,7 +42,7 @@ const Row1 = (props: Props) => {
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip />
-                        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                        <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
                     </AreaChart>
                 </ResponsiveContainer>
             </DashboardBox>
