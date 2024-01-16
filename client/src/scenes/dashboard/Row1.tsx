@@ -7,9 +7,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YA
 const Row1 = () => {
     const { palette } = useTheme();
     const { data } = useGetKpisQuery();
-
-    console.log("data: ", data);
-
+    
     // useMemo is useful here for conserving memory
     const revenueExpenses = useMemo(() => {
         return (
