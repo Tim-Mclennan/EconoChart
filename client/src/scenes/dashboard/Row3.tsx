@@ -2,7 +2,7 @@ import BoxHeader from '@/components/BoxHeader';
 import DashboardBox from '@/components/DashboardBox'
 import { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } from '@/state/api';
 import { Box, useTheme } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 
 const Row3 = () => {
     const { palette } = useTheme();
@@ -11,6 +11,30 @@ const Row3 = () => {
     const { data: kpiData } = useGetKpisQuery();
     const { data: productData } = useGetProductsQuery();
     const { data: transactionData } = useGetTransactionsQuery();
+
+    const productColumns = [
+        {
+            field: "_id",
+            headerName: "id",
+            flex: 1,
+        },
+        {
+            field: "expense",
+            headerName: "Expense",
+            flex: 0.5,
+            // Renders the expense with a money symbol:
+            renderCell: (params: GridCellParams) => 
+               `$${params.value}`,
+        },
+        {
+            field: "price",
+            headerName: "Price",
+            flex: 0.5,
+            // Renders the price with a money symbol:
+            renderCell: (params: GridCellParams) => 
+               `$${params.value}`,  
+        }
+    ]
     return (
         <>
             <DashboardBox gridArea="g">
@@ -23,6 +47,7 @@ const Row3 = () => {
                      p="0 0.5rem"
                      height="75%"
                      sx={{
+                        //These styles will affect DataGrid
                         "& .MuiDataGrid-root": {
                             color: palette.grey[300],
                             border: "none",
@@ -39,6 +64,9 @@ const Row3 = () => {
                      }}
                 >
                     <DataGrid
+                    columnHeaderHeight={25}
+                    rowHeight={35}
+                    hideFooter={true}
                         rows={productData || []}
                         columns={productColumns}
                     />
