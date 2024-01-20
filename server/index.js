@@ -30,7 +30,7 @@ app.use("/product", productRoutes);
 app.use("/transaction", transactionRoutes);
 
 // MONGOOSE
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3000;
 
 mongoose
     .connect(
