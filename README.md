@@ -39,8 +39,8 @@ I will guide you on how to run EconoChart locally, however you can also view the
 
 2. Install NPM packages for both the client and server:
 
-     cd client && npm install
-   cd ../server && npm install
+     `cd client && npm install`
+   `cd ../server && npm install`
 
 ### Running the Application
 
@@ -48,7 +48,7 @@ I will guide you on how to run EconoChart locally, however you can also view the
 
 Navigate to the server directory and run the following command to start the server:
 
-npm run dev
+`npm run dev`
 
 The server runs on port 3000 by default, but this can be configured by setting the PORT environment variable in a .env file.
 Client
@@ -57,7 +57,7 @@ Client
 
 Navigate to the client directory and run the same command to start the client:
 
-npm run dev
+`npm run dev`
 
 The client runs on port 5000 by default, but this can be configured by setting the PORT environment variable in a .env file.
 
