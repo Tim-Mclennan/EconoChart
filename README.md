@@ -1,4 +1,6 @@
-# EconoChart
+# EconoChart 
+
+![dashboard](https://github.com/Tim-Mclennan/EconoChart/assets/102727510/4f901f2d-0986-4fef-aba2-990ee8eb2a0f)
 
 EconoChart is a full-stack web application that provides a visual representation of key performance indicators (KPIs), products, and transactions data. It's a great tool for visualizing and predicting business performance.
 
@@ -79,3 +81,13 @@ The `server` directory contains all the backend code written in Node.js and Expr
 - Express.js
 - Mongoose
 - Fly.io
+
+- ## 🚀 About Me
+I'm a Frontend developer that has a deep passion for user experience on the web. 
+
+Feel free to contact me with the links below!
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Tim-Mclennan/My-Portfolio)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tim-mclennan-0563341aa/)
+
