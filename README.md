@@ -2,9 +2,11 @@
 
 ![dashboard](https://github.com/Tim-Mclennan/EconoChart/assets/102727510/4f901f2d-0986-4fef-aba2-990ee8eb2a0f)
 
-EconoChart is a full-stack web application that provides a visual representation of key performance indicators (KPIs), products, and transactions data. It's a great tool for visualizing and predicting business performance.
+EconoChart is a full-stack web application that provides a visual representation of key performance indicators (KPIs), products, and transactions data. It's a great tool for visualizing and using machine learning to predict business performance.
 
-I will guide you on how to run EconoChart locally, however you can also view the project from this URL: https://econo-chart-foldazm50-tim-mclennans-projects.vercel.app/
+Although I will guide you on how to run EconoChart locally, it is also deployed! So you can view my project from this URL: 
+
+https://econo-chart.vercel.app/
 
 ## What I Learned
 
@@ -15,6 +17,7 @@ I will guide you on how to run EconoChart locally, however you can also view the
 - Deploying the server on Fly.io.
 - Using Vite for a faster and leaner development experience.
 - Implementing responsive design with Material-UI and CSS Grid.
+- Using a Machine Learning method from the Regression library
 
 ## Technologies Used
 
